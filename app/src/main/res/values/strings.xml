@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">RuntimePermissionTest</string>
-    <string name="callPhone">callPhone</string>
+    <string name="call10086">call10086</string>
 </resources>

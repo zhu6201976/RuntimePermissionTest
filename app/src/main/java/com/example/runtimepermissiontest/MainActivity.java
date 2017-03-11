@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,18 +16,16 @@ import android.widget.Toast;
  * RuntimePermissionTest
  */
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate: ");
     }
 
-    // 点击按钮,拨打电话
-    public void callPhone(View view) {
-        // 先检查自身权限,已经授权,必须这样写,否则6.0前崩溃
+    // 点击按钮,拨打10086
+    public void call10086(View view) {
+        // 先检查自身权限,如果已经授权,则拨打电话.必须这样写,否则6.0前崩溃
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             this.call();
         } else {// 没有授权,请求用户授权,requestcode = 1;
